@@ -1,0 +1,168 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to top, #e99571 0%, #ace0f9 100%);
+}
+h1 {
+  font-size: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 50px;
+  font-weight: 500;
+}
+p {
+  font-size: 12px;
+  margin-top: 15px;
+  opacity: 80%;
+}
+footer {
+  text-align: center;
+  font-size: 12px;
+  opacity: 80%;
+}
+
+button {
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+button:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+#button-space {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.celcius {
+  font-size: 12px;
+  text-align: center;
+}
+.weather-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.weather-icon-main {
+  font-size: 200px;
+  text-align: center;
+  margin-left: 70px;
+  margin-bottom: 40px;
+  color: #6c757d;
+}
+.container {
+  max-width: 800px;
+  margin-top: 50px;
+}
+.footer-space {
+  margin-top: 100px;
+}
+
+.icon-instagram {
+  font-size: 30px;
+  color: black;
+  transition: all 150ms ease-in-out;
+}
+.icon-facebook {
+  font-size: 30px;
+  color: black;
+  transition: all 150ms ease-in-out;
+}
+.icon-linkedin {
+  font-size: 30px;
+  color: black;
+  transition: all 150ms ease-in-out;
+}
+.icons {
+  margin-top: 10px;
+  letter-spacing: 10px;
+  margin-bottom: 100px;
+}
+.icon-instagram:hover {
+  color: #6c757d;
+  transform: scale(1.1);
+}
+.icon-facebook:hover {
+  color: #6c757d;
+  transform: scale(1.1);
+}
+.icon-linkedin:hover {
+  color: #6c757d;
+  transform: scale(1.1);
+}
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.first-container {
+  margin-top: 100px;
+}
+.cloud {
+  color: #6c757d;
+}
+.bolt {
+  color: #6c757d;
+}
+.sun {
+  color: rgb(235, 188, 102);
+}
+.umbrella {
+  color: #6c757d;
+}
+.city-name {
+  margin-left: 30px;
+  text-align: center;
+}
+.input-search {
+  color: #6c757d;
+}
+.input-search:hover {
+  background: #6c757d;
+  transform: scale(1.1);
+}
+.first-prognose:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+.second-prognose:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+.third-prognose:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+.fourth-prognose:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+.fifth-prognose:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+.sixth-prognose:hover {
+  opacity: 80%;
+  transform: scale(1.1);
+}
+#units {
+  font-size: 20px;
+}
+#celcius-link {
+  text-decoration: none;
+}
+#fahrenheit-link {
+  text-decoration: none;
+}
