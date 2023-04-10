@@ -85,7 +85,7 @@ button:hover {
 .icons {
   margin-top: 10px;
   letter-spacing: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 .icon-instagram:hover {
   color: #6c757d;
@@ -96,6 +96,20 @@ button:hover {
   transform: scale(1.1);
 }
 .icon-linkedin:hover {
+  color: #6c757d;
+  transform: scale(1.1);
+}
+
+.github-link {
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+.github-press {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.github-press:hover {
   color: #6c757d;
   transform: scale(1.1);
 }
