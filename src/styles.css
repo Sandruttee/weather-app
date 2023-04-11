@@ -173,6 +173,8 @@ button:hover {
 }
 #units {
   font-size: 20px;
+  position: relative;
+  top: -20px;
 }
 #celcius-link {
   text-decoration: none;
