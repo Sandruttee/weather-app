@@ -1,16 +1,45 @@
 // Current time
+
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  return `Last updated: ${day}, ${hour}:${minutes}`;
+}
+
+function formatDay(timestamp) {
+  let now = new Date(timestamp * 1000);
+  let day = now.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
 let now = new Date();
-let currentDate = document.querySelector("#current-date");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
 let dayNumber = now.getDate();
 let months = [
   "January",
@@ -29,18 +58,6 @@ let months = [
 let month = months[now.getMonth()];
 let year = now.getFullYear();
 
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-currentDate.innerHTML = `${day}, ${dayNumber} ${month}, ${year}, <strong>${hour}:${minutes}<strong>`;
-
 // Real temperature week 5
 function showTemperature(response) {
   let temperatureElement = document.querySelector(".temperature");
@@ -53,6 +70,9 @@ function showTemperature(response) {
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
+
+  let currentDate = document.querySelector("#current-date");
+  currentDate.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 // Default city
