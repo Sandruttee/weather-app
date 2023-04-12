@@ -73,6 +73,14 @@ function showTemperature(response) {
 
   let currentDate = document.querySelector("#current-date");
   currentDate.innerHTML = formatDate(response.data.dt * 1000);
+
+  // Icon change
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
+  );
 }
 
 // Default city

@@ -182,3 +182,7 @@ button:hover {
 #fahrenheit-link {
   text-decoration: none;
 }
+
+#icon-position {
+  text-align: center;
+}
