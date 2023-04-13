@@ -3,7 +3,7 @@ body {
   background: linear-gradient(to top, #e99571 0%, #ace0f9 100%);
 }
 h1 {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -185,4 +185,13 @@ button:hover {
 
 #icon-position {
   text-align: center;
+}
+#weather-description {
+  font-size: 12px;
+  opacity: 80%;
+  margin-bottom: 20px;
+  display: block;
+}
+#weather-description:first-letter {
+  text-transform: uppercase;
 }
