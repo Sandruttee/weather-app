@@ -121,7 +121,6 @@ function showCurrentLocation() {
       let windSpeed = document.querySelector(".wind-speed");
       windSpeed.innerHTML = Math.round(response.data.wind.speed);
     }
-
     let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
     let apiUrlSecond = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlSecond).then(showTemperature);
