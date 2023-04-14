@@ -60,7 +60,7 @@ let year = now.getFullYear();
 
 // Real temperature week 5
 function showTemperature(response) {
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector(".temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let temperatureHigh = document.querySelector(".temp-high");
   temperatureHigh.innerHTML = Math.round(response.data.main.temp_max);
@@ -112,7 +112,7 @@ function showCurrentLocation() {
     function showTemperature(response) {
       let cityName = document.querySelector("#city-name");
       cityName.innerHTML = response.data.name;
-      let temperaturePosition = document.querySelector("#temperature");
+      let temperaturePosition = document.querySelector(".temperature");
       temperaturePosition.innerHTML = Math.round(response.data.main.temp);
       let temperatureHigh = document.querySelector(".temp-high");
       temperatureHigh.innerHTML = Math.round(response.data.main.temp_max);
@@ -142,7 +142,7 @@ let celsiusTemperature = null;
 
 function displayFah(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temperature");
+  let temperature = document.querySelector(".temperature");
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
@@ -153,7 +153,7 @@ function displayFah(event) {
 
 function displayCels(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temperature");
+  let temperature = document.querySelector(".temperature");
 
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
