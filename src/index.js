@@ -60,7 +60,7 @@ let year = now.getFullYear();
 
 // Real temperature week 5
 function showTemperature(response) {
-  let temperatureElement = document.querySelector(".temperature");
+  let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let temperatureHigh = document.querySelector(".temp-high");
   temperatureHigh.innerHTML = Math.round(response.data.main.temp_max);
@@ -73,6 +73,8 @@ function showTemperature(response) {
 
   let currentDate = document.querySelector("#current-date");
   currentDate.innerHTML = formatDate(response.data.dt * 1000);
+
+  celsiusTemperature = response.data.main.temp;
 
   // Icon change
 
@@ -101,7 +103,7 @@ function search(event) {
   searchCity(city);
 }
 
-// Current location // need to join changin high/low/wind speed
+// Current location
 function showCurrentLocation() {
   function showPosition(position) {
     let lat = position.coords.latitude;
@@ -110,7 +112,7 @@ function showCurrentLocation() {
     function showTemperature(response) {
       let cityName = document.querySelector("#city-name");
       cityName.innerHTML = response.data.name;
-      let temperaturePosition = document.querySelector(".temperature");
+      let temperaturePosition = document.querySelector("#temperature");
       temperaturePosition.innerHTML = Math.round(response.data.main.temp);
       let temperatureHigh = document.querySelector(".temp-high");
       temperatureHigh.innerHTML = Math.round(response.data.main.temp_max);
@@ -119,6 +121,7 @@ function showCurrentLocation() {
       let windSpeed = document.querySelector(".wind-speed");
       windSpeed.innerHTML = Math.round(response.data.wind.speed);
     }
+
     let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
     let apiUrlSecond = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlSecond).then(showTemperature);
@@ -134,19 +137,35 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
 // Temperature conversion celcius/fah
-//function changeFah() {
-//let temperature = document.querySelector("#temperature");
-//temperature.innerHTML = "+17";
-//}
-//let celciusLink = document.querySelector("#celcius-link");
-//celciusLink.addEventListener("click", changeFah);
 
-//function changeCelc() {
-//let temperature = document.querySelector("#temperature");
+let celsiusTemperature = null;
 
-//temperature.innerHTML = "66";
-//}
-//let fahrenheitLink = document.querySelector("#fahrenheit-link");
-//fahrenheitLink.addEventListener("click", changeCelc);
+function displayFah(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let fahTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahTemp);
+}
+
+function displayCels(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  let celsTemp = celsiusTemperature;
+  temperature.innerHTML = Math.round(celsTemp);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFah);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCels);
 
 searchCity("Vilnius");

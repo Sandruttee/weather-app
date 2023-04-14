@@ -176,7 +176,7 @@ button:hover {
   position: relative;
   top: -20px;
 }
-#celcius-link {
+#celsius-link {
   text-decoration: none;
 }
 #fahrenheit-link {
@@ -194,4 +194,9 @@ button:hover {
 }
 #weather-description:first-letter {
   text-transform: uppercase;
+}
+
+.active {
+  color: black;
+  cursor: default;
 }
