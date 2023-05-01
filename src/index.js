@@ -60,23 +60,46 @@ let year = now.getFullYear();
 
 // Forecast
 
+function formatForecatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily); // fetching daily forecast
+  let forecast = response.data.daily; // fetching daily forecast
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `    <div class="col-2 first-prognose">
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `    <div class="col-2 first-prognose">
           <div class="card">
             <div class="card-body celcius">
-              <i class="fa-solid fa-cloud weather-icon cloud"></i><br />
-              ${day} <br />
-              5°C | 6°C
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="" width="42" />
+              ${formatForecatDay(forecastDay.dt)} <br />
+              ${Math.round(forecastDay.temp.max)}°C | ${Math.round(
+          forecastDay.temp.min
+        )}°C
             </div>
           </div>
         </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
