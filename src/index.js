@@ -58,6 +58,29 @@ let months = [
 let month = months[now.getMonth()];
 let year = now.getFullYear();
 
+// Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `    <div class="col-2 first-prognose">
+          <div class="card">
+            <div class="card-body celcius">
+              <i class="fa-solid fa-cloud weather-icon cloud"></i><br />
+              ${day} <br />
+              5°C | 6°C
+            </div>
+          </div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Real temperature week 5
 function showTemperature(response) {
   let temperatureElement = document.querySelector(".temperature");
@@ -168,3 +191,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCels);
 
 searchCity("Vilnius");
+displayForecast();
