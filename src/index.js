@@ -93,9 +93,9 @@ function displayForecast(response) {
                 forecastDay.weather[0].icon
               }@2x.png" alt="" width="42" />
               ${formatForecatDay(forecastDay.dt)} <br />
-              ${Math.round(forecastDay.temp.max)}°C | ${Math.round(
+              ${Math.round(forecastDay.temp.max)} °C | ${Math.round(
           forecastDay.temp.min
-        )}°C
+        )} °C
             </div>
           </div>
         </div>`;

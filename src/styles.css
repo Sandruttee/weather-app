@@ -48,17 +48,6 @@ button:hover {
   font-size: 12px;
   text-align: center;
 }
-.weather-icon {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-.weather-icon-main {
-  font-size: 200px;
-  text-align: center;
-  margin-left: 70px;
-  margin-bottom: 40px;
-  color: #6c757d;
-}
 .container {
   max-width: 800px;
   margin-top: 50px;
@@ -124,18 +113,6 @@ button:hover {
 .first-container {
   margin-top: 100px;
 }
-.cloud {
-  color: #6c757d;
-}
-.bolt {
-  color: #6c757d;
-}
-.sun {
-  color: rgb(235, 188, 102);
-}
-.umbrella {
-  color: #6c757d;
-}
 .city-name {
   margin-left: 30px;
   text-align: center;
@@ -151,26 +128,7 @@ button:hover {
   opacity: 80%;
   transform: scale(1.1);
 }
-.second-prognose:hover {
-  opacity: 80%;
-  transform: scale(1.1);
-}
-.third-prognose:hover {
-  opacity: 80%;
-  transform: scale(1.1);
-}
-.fourth-prognose:hover {
-  opacity: 80%;
-  transform: scale(1.1);
-}
-.fifth-prognose:hover {
-  opacity: 80%;
-  transform: scale(1.1);
-}
-.sixth-prognose:hover {
-  opacity: 80%;
-  transform: scale(1.1);
-}
+
 #units {
   font-size: 20px;
   position: relative;
