@@ -60,7 +60,8 @@ let year = now.getFullYear();
 
 // Forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily); // fetching daily forecast
   let forecastElement = document.querySelector("#forecast");
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   let forecastHTML = `<div class="row">`;
@@ -79,6 +80,13 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+// forecast
+function getForecast(coordinates) {
+  let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiURL).then(displayForecast);
 }
 
 // Real temperature week 5
@@ -109,6 +117,9 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let description = document.querySelector("#weather-description");
   description.innerHTML = response.data.weather[0].description;
+
+  //calling forecast function + getting a coordinates response from existing API call
+  getForecast(response.data.coord);
 }
 
 // Default city
@@ -191,4 +202,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCels);
 
 searchCity("Vilnius");
-displayForecast();
