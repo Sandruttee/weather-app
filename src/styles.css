@@ -158,3 +158,10 @@ button:hover {
   color: black;
   cursor: default;
 }
+.forecast-day {
+  color: black;
+}
+
+.forecast-temp {
+  opacity: 80%;
+}

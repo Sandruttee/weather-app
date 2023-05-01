@@ -92,10 +92,12 @@ function displayForecast(response) {
               <img src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
               }@2x.png" alt="" width="42" />
-              ${formatForecatDay(forecastDay.dt)} <br />
+              <span class="forecast-day"> ${formatForecatDay(
+                forecastDay.dt
+              )} </span> <br /> <span class="forecast-temp">
               ${Math.round(forecastDay.temp.max)} °C | ${Math.round(
           forecastDay.temp.min
-        )} °C
+        )} °C </span>
             </div>
           </div>
         </div>`;
