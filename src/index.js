@@ -76,7 +76,7 @@ function formatForecatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily; // fetching daily forecast
+  let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -143,7 +143,6 @@ function showTemperature(response) {
   let description = document.querySelector("#weather-description");
   description.innerHTML = response.data.weather[0].description;
 
-  //calling forecast function + getting a coordinates response from existing API call
   getForecast(response.data.coord);
 }
 
