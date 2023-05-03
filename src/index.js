@@ -1,5 +1,3 @@
-// Current time
-
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let hour = now.getHours();
@@ -58,8 +56,6 @@ let months = [
 let month = months[now.getMonth()];
 let year = now.getFullYear();
 
-// Forecast
-
 function formatForecatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -114,7 +110,6 @@ function getForecast(coordinates) {
   axios.get(apiURL).then(displayForecast);
 }
 
-// Real temperature
 function showTemperature(response) {
   let temperatureElement = document.querySelector(".temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -132,8 +127,6 @@ function showTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  // Icon change
-
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -146,22 +139,18 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-// Default city
-
 function searchCity(city) {
   let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 
-// Search engine
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
   searchCity(city);
 }
 
-// Current location
 function showCurrentLocation() {
   function showPosition(position) {
     let lat = position.coords.latitude;
