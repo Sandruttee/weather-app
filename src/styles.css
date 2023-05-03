@@ -48,6 +48,10 @@ button:hover {
   font-size: 12px;
   text-align: center;
 }
+
+#celsius-main {
+  text-decoration: none;
+}
 .container {
   max-width: 800px;
   margin-top: 50px;
@@ -133,12 +137,6 @@ button:hover {
   font-size: 20px;
   position: relative;
   top: -20px;
-}
-#celsius-link {
-  text-decoration: none;
-}
-#fahrenheit-link {
-  text-decoration: none;
 }
 
 #icon-position {

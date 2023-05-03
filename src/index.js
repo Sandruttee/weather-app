@@ -106,7 +106,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-// forecast
+
 function getForecast(coordinates) {
   let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -114,7 +114,7 @@ function getForecast(coordinates) {
   axios.get(apiURL).then(displayForecast);
 }
 
-// Real temperature week 5
+// Real temperature
 function showTemperature(response) {
   let temperatureElement = document.querySelector(".temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -189,41 +189,7 @@ function showCurrentLocation() {
 let button = document.querySelector("button");
 button.addEventListener("click", showCurrentLocation);
 
-//
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
-
-// Temperature conversion celcius/fah
-
-let celsiusTemperature = null;
-
-function displayFah(event) {
-  event.preventDefault();
-  let temperature = document.querySelector(".temperature");
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahTemp = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahTemp);
-}
-
-function displayCels(event) {
-  event.preventDefault();
-  let temperature = document.querySelector(".temperature");
-
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-
-  let celsTemp = celsiusTemperature;
-  temperature.innerHTML = Math.round(celsTemp);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFah);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCels);
 
 searchCity("Vilnius");
