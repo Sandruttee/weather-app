@@ -82,15 +82,15 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `    <div class="col-2 first-prognose">
+        `    <div class="col-sm-2 first-prognose">
           <div class="card">
             <div class="card-body celcius">
               <img src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
               }@2x.png" alt="" width="42" />
-              <span style="font-size: 0.8vw" class="forecast-day"> ${formatForecatDay(
+              <span class="forecast-day"> ${formatForecatDay(
                 forecastDay.dt
-              )} </span> <br /> <span style="font-size: 0.8vw" class="forecast-temp">
+              )} </span> <br /> <span  class="forecast-temp">
               ${Math.round(forecastDay.temp.max)} °C | ${Math.round(
           forecastDay.temp.min
         )} °C </span>
